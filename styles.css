@@ -1,0 +1,419 @@
+@import url('https://fonts.cdnfonts.com/css/fraunces');
+@import url('https://fonts.cdnfonts.com/css/barlow');
+
+:root {
+    --white: #fff;
+    --black: #000000;
+    --brown: #7c7a7a;
+    --ligth-green: #2C7566;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-size: 30px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1024px;
+    min-width: 560px;
+    margin: 0 auto;
+}
+
+/*GENERAL HEADER*/
+.header-container {
+    position: relative;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.header nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.header nav ul > li :hover {
+    color: var(--black);
+    text-transform: uppercase;
+    border-radius: 30px;
+    background: var(--white);
+    border: 15px solid var(--white);
+}
+
+.header {
+    height: 400px;
+    width: 100%;
+    background: center / cover no-repeat url("src/images/desktop/image-header.jpg");
+    padding: 15px 30px;
+}
+
+.header-container-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    position: relative;
+    top: 40px;
+}
+
+.header-container-text {
+    font-size: 35px;
+    color: var(--white);
+    letter-spacing: 4px;
+}
+
+/*GENERAL BANNER*/
+.banner-text-first-third-left p,
+.banner-text-first-third-right p {
+    font-size: 12px;
+    color: rgba(86, 85, 85, 0.73);
+}
+
+.banner-text-first-second {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.banner-text-first-second a {
+    text-decoration: none;
+    padding-left: 5px;
+    font-size: 14px;
+    color: var(--black);
+    position: relative;
+}
+
+.banner-text-first-second a::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 105%;
+    border-radius: 30px;
+    top: 10px;
+    left: 0;
+}
+
+.banner-text-first-second .banner-text-first-link::after {
+    background-color: rgba(245, 201, 10, 0.25);
+}
+
+.banner-text-first-second .banner-text-second-link::after {
+    background-color: rgba(242, 116, 100, 0.25);
+}
+
+.banner-text-first-third-left,
+.banner-text-first-third-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    flex-basis: 50%;
+    padding: 220px 120px 0;
+}
+
+.banner-text-first-third-left h2,
+.banner-text-first-third-right h2 {
+    color: rgba(0, 0, 0, 0.59);
+}
+
+/*GENERAL TESTIMONIALS*/
+.banner-text-first-second p,
+.banner-text-first-third-left p,
+.banner-text-first-third-right p {
+    color: var(--brown);
+    font-family: 'Barlow', sans-serif;
+    margin-bottom: 30px;
+}
+
+.client-testimonials-container > span {
+    display: flex;
+    justify-content: center;
+    margin-top: 110px;
+    color: var(--brown);
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.client-testimonials-container ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.client-testimonials-container ul li span:first-of-type {
+    color: var(--brown);
+    font-size: 10px;
+    padding: 25px 35px;
+    text-align: center;
+}
+
+.client-testimonials-container ul li span {
+    color: var(--brown);
+    font-size: 8px;
+    padding: 10px 35px;
+    text-align: center;
+}
+
+.client-testimonials-container ul li img {
+    display: flex;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+/*GENERAL IMAGE-CONTAINER*/
+.image-container img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+/*GENERAL FOOTER*/
+footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 15px;
+    width: 100%;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer nav ul li a {
+    color: var(--ligth-green);
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #9bdccc;
+    padding: 60px 0 20px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.social-nav {
+    gap: 30px;
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 1023.9px) {
+
+    /*DESKTOP HEADER*/
+    .mobile-menu-button {
+        display: none;
+    }
+
+    /*DESKTOP BANNER*/
+    .banner-container-first,
+    .banner-container-second,
+    .banner-container-third {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .banner-text-first-second {
+        align-items: start;
+        padding: 83px;
+    }
+
+    .banner-img-first,
+    .banner-img-second {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 100%;
+        flex-basis: 50%;
+        flex-wrap: wrap;
+    }
+
+    .banner-img-first {
+        background: url("src/images/desktop/image-transform.jpg") no-repeat center / cover;
+    }
+
+    .banner-img-second {
+        background: url("src/images/desktop/image-stand-out.jpg") no-repeat center / cover;
+    }
+
+    .banner-text-first-third-left {
+        background-color: var(--ligth-green);
+        background-image: url("src/images/desktop/image-graphic-design.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .banner-text-first-third-right {
+        background-color: #5ad3ff;
+        background-image: url("src/images/desktop/image-photography.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /*DESKTOP TESTIMONIALS*/
+    .client-testimonials-container ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        list-style: none;
+        flex-grow: 3;
+        padding: 50px 50px 100px 50px;
+    }
+
+    /*DESKTOP IMAGE*/
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .image-container > * {
+        display: flex;
+        flex: 0 1 25%;
+    }
+}
+
+/*MOBILE*/
+@media screen and (max-width: 1023.9px) {
+
+    /*MOBILE HEADER*/
+    .header-navigation {
+        opacity: 0;
+    }
+
+    .logo-img.visible {
+        display: none;
+        transition: opacity 0.3s;
+    }
+
+    .header-navigation.visible {
+        opacity: 100;
+        transition: opacity 0.3s;
+    }
+
+    .mobile-menu-button {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: transparent;
+        border: none;
+    }
+
+    .mobile-menu-button span {
+        display: block;
+        background: white;
+        height: 3px;
+        width: 35px;
+        transition: transform 0.3s ease-in-out, opacity 0.3s;
+    }
+
+    .mobile-menu-button.open span:nth-child(1) {
+        transform: translateY(+15px) rotate(405deg);
+    }
+
+    .mobile-menu-button.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-button.open span:nth-child(3) {
+        transform: translateY(-11px) rotate(-405deg);
+    }
+
+
+    /*MOBILE banner*/
+    .banner-container-first {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .banner-text-first-second {
+        padding: 100px;
+    }
+
+    .banner-img-first,
+    .banner-img-second,
+    .banner-text-first-third-left,
+    .banner-text-first-third-right {
+        display: flex;
+        height: 550px;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .banner-img-first {
+        background: url("src/images/mobile/image-transform.jpg") no-repeat center/cover;
+    }
+
+    .banner-img-second {
+        background: url("src/images/mobile/image-stand-out.jpg") no-repeat center/cover;
+    }
+
+    .banner-text-first-third-left {
+        background: url("src/images/mobile/image-graphic-design.jpg") no-repeat center/cover;
+    }
+
+    .banner-text-first-third-right {
+        background: url("src/images/mobile/image-photography.jpg") no-repeat center/cover;
+    }
+
+    /*MOBILE CLIENT-TESTIMONIALS*/
+    .client-testimonials-container ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        list-style: none;
+        flex-grow: 3;
+        gap: 40px;
+        padding: 50px 150px 100px 150px;
+    }
+
+    .image-container,
+    .banner-container-third {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .image-container > * {
+        display: flex;
+        flex: 0 1 50%;
+    }
+
+}
