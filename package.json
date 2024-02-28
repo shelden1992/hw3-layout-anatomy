@@ -1,0 +1,22 @@
+{
+  "name": "hw3-layout-anatomy",
+  "version": "1.0.0",
+  "description": "➡️ TASK",
+  "main": "index.js",
+  "scripts": {
+    "test": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shelden1992/hw3-layout-anatomy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shelden1992/hw3-layout-anatomy/issues"
+  },
+  "homepage": "https://github.com/shelden1992/hw3-layout-anatomy#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
