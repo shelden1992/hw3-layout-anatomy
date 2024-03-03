@@ -1,0 +1,384 @@
+@use "colors" as *;
+@use "fonts" as *;
+@use "config" as *;
+@import url('https://fonts.cdnfonts.com/css/fraunces');
+@import url('https://fonts.cdnfonts.com/css/barlow');
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-size: 32px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1024px;
+  min-width: 560px;
+  margin: 0 auto;
+}
+
+/*GENERAL HEADER*/
+.header {
+  height: 400px;
+  width: 100%;
+  @include default-background("image-header.jpg");
+  padding: 15px 30px;
+
+  &-container {
+    position: relative;
+    min-height: 50px;
+    @include display-flex(center, space-between);
+
+    nav ul {
+      display: flex;
+      gap: $gap;
+      list-style: none;
+
+      li {
+        & a {
+          color: $white;
+          text-decoration: none;
+        }
+
+        & :hover {
+          color: $black;
+          text-transform: uppercase;
+          border-radius: $gap;
+          background: $white;
+          border: 15px solid $white;
+        }
+      }
+    }
+  }
+
+  &-container-text {
+    @include display-flex(center, center, column);
+    font-weight: 500;
+    position: relative;
+    top: 40px;
+    font-size: 35px;
+    color: $white;
+    letter-spacing: 4px;
+  }
+}
+
+/*GENERAL STYLES*/
+%paragraph-style {
+  font-size: 12px;
+  color: rgba(86, 85, 85, 0.73);
+}
+
+.banner-text-third-left p,
+.banner-text-third-right p {
+  @extend %paragraph-style;
+}
+
+.banner-text-first-second {
+  @include display-flex(center, center, column);
+  flex: 1;
+
+  a {
+    text-decoration: none;
+    padding-left: 5px;
+    font-size: 14px;
+    color: $black;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 10px;
+      width: 105%;
+      border-radius: $gap;
+      top: 10px;
+      left: 0;
+    }
+
+    &.banner-text-first-link::after {
+      background-color: rgba(245, 201, 10, 0.25);
+    }
+
+    &.banner-text-second-link::after {
+      background-color: rgba(242, 116, 100, 0.25);
+    }
+  }
+}
+
+
+.banner-text-third-left,
+.banner-text-third-right {
+  @include display-flex(center, center, column);
+  font-size: 14px;
+  flex-basis: 50%;
+  padding: 220px 120px 0;
+}
+
+.banner-text-third-left h2,
+.banner-text-third-right h2 {
+  color: $light-black
+}
+
+/*GENERAL TESTIMONIALS*/
+.banner-text-first-second p,
+.banner-text-third-left p,
+.banner-text-third-right p {
+  color: $brown;
+  font-family: $font-second;
+  margin-bottom: 30px;
+}
+
+.client-testimonials-container {
+  & > span {
+    @include display-flex(center, center);
+    margin-top: 110px;
+    color: $brown;
+    font-weight: 500;
+    letter-spacing: 4px;
+  }
+
+  ul {
+    li {
+      @include display-flex(center, center, column);
+
+      span {
+        color: $brown;
+        font-size: 9px;
+        padding: 10px 35px;
+        text-align: center;
+
+        &:first-of-type {
+          color: $brown;
+          font-size: 10px;
+          padding: 25px 35px;
+        }
+      }
+    }
+
+    img {
+      border-radius: 50%;
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
+
+/*GENERAL IMAGE-CONTAINER*/
+.image-container img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+/*GENERAL FOOTER*/
+footer {
+  @include display-flex(center, center, column);
+  padding: 60px 0 20px;
+  font-family: $font-second;
+  background-color: $pistachio;
+
+  nav {
+    @include display-flex(center, center);
+    padding: 30px 0 15px;
+
+    ul {
+      @include display-flex(center, center);
+      list-style: none;
+      padding: 0;
+      gap: $gap;
+
+      li a {
+        color: $light-green;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.social-nav {
+  gap: $gap;
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 1023.9px) {
+
+  /*DESKTOP HEADER*/
+  .mobile-menu-button {
+    display: none;
+  }
+
+  /*DESKTOP BANNER*/
+  .banner-container-first,
+  .banner-container-second,
+  .banner-container-third {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .banner-text-first-second {
+    align-items: start;
+    padding: 83px;
+  }
+
+  .banner-img-first,
+  .banner-img-second {
+    @include display-flex(start, center, column);
+    width: 100%;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+  }
+
+  .banner-img-first {
+    @include default-background("image-transform.jpg");
+  }
+
+  .banner-img-second {
+    @include default-background("image-stand-out.jpg");
+  }
+
+  .banner-text-third-left {
+    background-color: $light-green;
+    @include default-background("image-graphic-design.jpg");
+  }
+
+  .banner-text-third-right {
+    background-color: $light-blue;
+    @include default-background("image-photography.jpg");
+  }
+
+  /*DESKTOP TESTIMONIALS*/
+  .client-testimonials-container ul {
+    @include display-flex(start, center);
+    list-style: none;
+    flex-grow: 3;
+    padding: 50px 50px 100px 50px;
+  }
+
+  /*DESKTOP IMAGE*/
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      display: flex;
+      flex: 0 1 25%;
+    }
+  }
+
+}
+
+/*MOBILE*/
+@media screen and (max-width: 1023.9px) {
+
+  /*MOBILE HEADER*/
+  .header-navigation {
+    opacity: 0;
+
+    &.visible {
+      opacity: 100;
+      transition: opacity 0.3s;
+    }
+  }
+
+  .logo-img.visible {
+    display: none;
+    transition: opacity 0.3s;
+  }
+
+  .mobile-menu-button {
+    @include display-flex(start, center, column);
+    gap: 10px;
+    background: transparent;
+    border: none;
+
+    span {
+      display: block;
+      background: white;
+      height: 3px;
+      width: 35px;
+      transition: transform 0.3s ease-in-out, opacity 0.3s;
+    }
+
+    &.open span:nth-child(1) {
+      transform: translateY(+15px) rotate(405deg);
+    }
+
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+      transform: translateY(-11px) rotate(-405deg);
+    }
+
+  }
+
+  /*MOBILE banner*/
+  .banner-container-first {
+    @include display-flex(start, center, column-reverse);
+  }
+
+  .banner-text-first-second {
+    padding: 100px;
+  }
+
+  .banner-img-first,
+  .banner-img-second,
+  .banner-text-third-left,
+  .banner-text-third-right {
+    display: flex;
+    height: 550px;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .banner-img-first {
+    @include default-background("image-transform.jpg", mobile);
+  }
+
+  .banner-img-second {
+    @include default-background("image-stand-out.jpg", mobile);
+  }
+
+  .banner-text-third-left {
+    @include default-background("image-graphic-design.jpg", mobile);
+  }
+
+  .banner-text-third-right {
+    @include default-background("image-photography.jpg", mobile);
+  }
+
+  /*MOBILE CLIENT-TESTIMONIALS*/
+  .client-testimonials-container ul {
+    @include display-flex(start, start, column);
+    list-style: none;
+    flex-grow: 3;
+    gap: $gap;
+    padding: 50px 150px 100px 150px;
+  }
+
+  .image-container,
+  .banner-container-third {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .image-container > * {
+    display: flex;
+    flex: 0 1 50%;
+  }
+
+}
