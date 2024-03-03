@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shelden1992/hw3-layout-anatomy#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
     "parcel": "^2.11.0"
   }
 }

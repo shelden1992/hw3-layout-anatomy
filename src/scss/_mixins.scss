@@ -1,0 +1,21 @@
+$root-urls: (
+        "desktop": "../images/desktop/",
+        "mobile": "../images/mobile/"
+);
+
+@mixin default-background($url, $device: "desktop") {
+  $root-url: map-get($root-urls, $device);
+
+  @if $root-url != null {
+    background: url("#{$root-url}#{$url}") no-repeat center / cover;
+  } @else {
+    @error "Unknown device '#{device}'. Please use 'desktop' or 'mobile'.";
+  }
+}
+
+@mixin display-flex($align-items:center, $justify-content:center, $flex-direction: row) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+}
